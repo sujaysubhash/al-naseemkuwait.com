@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en-US">
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Al Naseem International General Trading co W.L.L - Home Page</title>
+      <link rel="stylesheet" href="css/components.css">
+      <link rel="stylesheet" href="css/responsee.css">
+      <link rel="stylesheet" href="owl-carousel/owl.carousel.css">
+      <link rel="stylesheet" href="owl-carousel/owl.theme.css">
+      <!-- CUSTOM STYLE -->
+      <link rel="stylesheet" href="css/style.css">
+      <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+      <script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
+      <script type="text/javascript" src="js/jquery-ui.min.js"></script>    
+      <script type="text/javascript" src="js/modernizr.js"></script>
+      <script type="text/javascript" src="js/responsee.js"></script>
+      <script type="text/javascript" src="js/template-scripts.js"></script> 
+                 
+      <!--[if lt IE 9]>
+	      <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+        <script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
+      <![endif]-->
+   </head>
+   <body class="size-1140">
+      <!-- TOP NAV WITH LOGO -->
+<div class="page-wrap">       
+      <header>          
+         <nav>
+            <div class="line">
+               <div class="s-12 l-2"> 
+               		<a href="index.html"><div id="technique-one"></div></a>
+               </div>
+               <div class="top-nav s-12 l-10">
+                  <p class="nav-text">Menu</p>
+                  <ul class="right">
+                     <li class="active-item"><a href="index.html">Home</a></li>
+                     <li><a href="about-us.html">About Us</a></li>
+                     <li><a href="services.html">Services</a></li>
+                     <li><a href="contact-us.html">Contact Us</a></li>
+                     <li><a href="webmail">Web Mail</a></li>
+                  </ul>
+               </div>
+            </div>
+         </nav>
+      </header>  
+      <section>
+         <!-- CAROUSEL --> 
+         <div id="carousel">
+            <div id="owl-demo" class="owl-carousel owl-theme"> 
+               <div class="item">
+                  <img src="img/carousel/stationary.png" alt="We supply all Kinds of Office & School Stationary">
+                  <div class="line"> 
+                     <div class="text hide-s">
+                        <div class="line"> 
+                          <div class="prev-arrow hide-s hide-m">
+                             <i class="icon-chevron_left"></i>
+                          </div>
+                          <div class="next-arrow hide-s hide-m">
+                             <i class="icon-chevron_right"></i>
+                          </div>
+                        </div> 
+                        <h2>Supply Office & School Stationary</h2>
+                        <p>We provice all kinds of school and office stationary</p>
+                     </div>
+                  </div>
+               </div>
+               <div class="item">
+                  <img src="img/carousel/Computer accessories.png" alt="Computer accessories">
+                  <div class="line">
+                     <div class="text hide-s"> 
+                        <div class="line"> 
+                          <div class="prev-arrow hide-s hide-m">
+                             <i class="icon-chevron_left"></i>
+                          </div>
+                          <div class="next-arrow hide-s hide-m">
+                             <i class="icon-chevron_right"></i>
+                          </div>
+                        </div> 
+                        <h2>Computer accessories</h2>
+                        <p>Flash memory cards,USB drives, headsets, Cables, Laptop bags, batteries.</p>
+                     </div>
+                  </div>
+               </div>
+               <div class="item">
+                  <img src="img/carousel/Computer software.png" alt="We Provide Computer software">
+                  <div class="line">
+                     <div class="text hide-s">
+                        <div class="line"> 
+                          <div class="prev-arrow hide-s hide-m">
+                             <i class="icon-chevron_left"></i>
+                          </div>
+                          <div class="next-arrow hide-s hide-m">
+                             <i class="icon-chevron_right"></i>
+                          </div>
+                        </div> 
+                        <h2>We Provide Computer software</h2>
+                        <p>Operating System, MS Office, Anti-virus.</p>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+
+      </section>
+</div>      
+
+      <!-- FOOTER -->
+      
+      <footer class="site-footer">
+          <footer>
+             <div class="line">
+                <div class="s-12 l-5">
+                   <p>Copyright 2016, Al Naseem International Gene. Trading Co. W.L.L</p>
+                </div>
+                <div class="s-12 l-6">
+                   <p>Designed & Developed by <a href="www.zaksoftwaretech.com">Zak Software Technologies</a></p>
+                </div>            
+             </div>
+          </footer>
+      </footer>
+      <script type="text/javascript" src="owl-carousel/owl.carousel.js"></script>
+      <script type="text/javascript">
+         jQuery(document).ready(function($) {
+            var theme_slider = $("#owl-demo");
+            $("#owl-demo").owlCarousel({
+                navigation: false,
+                slideSpeed: 300,
+                paginationSpeed: 400,
+                autoPlay: 6000,
+                addClassActive: true,
+             // transitionStyle: "fade",
+                singleItem: true
+            });
+            $("#owl-demo2").owlCarousel({
+                slideSpeed: 300,
+                autoPlay: true,
+                navigation: true,
+                navigationText: ["&#xf007","&#xf006"],
+                pagination: false,
+                singleItem: true
+            });
+        
+            // Custom Navigation Events
+            $(".next-arrow").click(function() {
+                theme_slider.trigger('owl.next');
+            })
+            $(".prev-arrow").click(function() {
+                theme_slider.trigger('owl.prev');
+            })     
+        }); 
+      </script>
+   </body>
+</html>
