@@ -1,158 +1,922 @@
 <!DOCTYPE html>
 <html lang="en-US">
-   <head>
-      <meta charset="UTF-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <title>Al Naseem International General Trading co W.L.L - Home Page</title>
-      <link rel="stylesheet" href="css/components.css">
-      <link rel="stylesheet" href="css/responsee.css">
-      <link rel="stylesheet" href="owl-carousel/owl.carousel.css">
-      <link rel="stylesheet" href="owl-carousel/owl.theme.css">
-      <!-- CUSTOM STYLE -->
-      <link rel="stylesheet" href="css/style.css">
-      <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
-      <script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
-      <script type="text/javascript" src="js/jquery-ui.min.js"></script>    
-      <script type="text/javascript" src="js/modernizr.js"></script>
-      <script type="text/javascript" src="js/responsee.js"></script>
-      <script type="text/javascript" src="js/template-scripts.js"></script> 
-                 
-      <!--[if lt IE 9]>
-	      <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-        <script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
-      <![endif]-->
-   </head>
-   <body class="size-1140">
-      <!-- TOP NAV WITH LOGO -->
-<div class="page-wrap">       
-      <header>          
-         <nav>
-            <div class="line">
-               <div class="s-12 l-2"> 
-               		<a href="index.html"><div id="technique-one"></div></a>
-               </div>
-               <div class="top-nav s-12 l-10">
-                  <p class="nav-text">Menu</p>
-                  <ul class="right">
-                     <li class="active-item"><a href="index.html">Home</a></li>
-                     <li><a href="about-us.html">About Us</a></li>
-                     <li><a href="services.html">Services</a></li>
-                     <li><a href="contact-us.html">Contact Us</a></li>
-                     <li><a href="mailto:admin@al-naseemkuwait.com
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Al Naseem International General Trading Co. W.L.L</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="icon" type="image/png" href="./Assets/logo.png">
+
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --sand: #F5ECD7;
+      --sand-light: #FBF6ED;
+      --sand-dark: #E8D8B8;
+      --amber: #C8872A;
+      --amber-light: #E5A84A;
+      --amber-dark: #9B6418;
+      --forest: #2D4A3E;
+      --forest-light: #3D6455;
+      --cream: #FDFAF4;
+      --charcoal: #1E2D27;
+      --muted: #6B7B6A;
+      --white: #FFFFFF;
+      --shadow-warm: 0 4px 24px rgba(100, 60, 10, 0.10);
+      --shadow-card: 0 2px 12px rgba(100, 60, 10, 0.08);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--cream);
+      color: var(--charcoal);
+      line-height: 1.6;
+    }
+
+    /* ── NAV ── */
+    header {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      background: rgba(253, 250, 244, 0.96);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--sand-dark);
+      transition: box-shadow 0.3s;
+    }
+    header.scrolled { box-shadow: var(--shadow-warm); }
+
+    nav {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
+      height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo-wrap { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+    .logo-mark {
+      width: 42px; height: 42px;
+      background: var(--forest);
+      border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'Playfair Display', serif;
+      font-size: 20px;
+      color: var(--amber-light);
+      font-weight: 700;
+      letter-spacing: -1px;
+      flex-shrink: 0;
+    }
+    .logo-text { line-height: 1.2; }
+    .logo-text strong {
+      display: block;
+      font-family: 'Playfair Display', serif;
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--forest);
+    }
+    .logo-text span {
+      font-size: 11px;
+      color: var(--muted);
+      font-weight: 400;
+      letter-spacing: 0.02em;
+    }
+
+    .about-image-inner {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 600;
+      font-size: 28px;
+      letter-spacing: 1px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .nav-links { display: flex; align-items: center; gap: 0; list-style: none; }
+    .nav-links a {
+      display: block;
+      padding: 0.5rem 1.1rem;
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--muted);
+      text-decoration: none;
+      border-radius: 6px;
+      transition: color 0.2s, background 0.2s;
+    }
+    .nav-links a:hover { color: var(--forest); background: var(--sand); }
+    .nav-links a.active { color: var(--forest); font-weight: 600; }
+
+    .nav-cta {
+      background: var(--amber);
+      color: var(--white) !important;
+      border-radius: 8px !important;
+      padding: 0.5rem 1.2rem !important;
+      font-weight: 600 !important;
+      transition: background 0.2s !important;
+    }
+    .nav-cta:hover { background: var(--amber-dark) !important; color: var(--white) !important; }
+
+    /* ── HERO ── */
+    .hero {
+      min-height: 100vh;
+      background: var(--forest);
+      display: flex;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+      padding-top: 72px;
+    }
+
+    .hero-pattern {
+      position: absolute;
+      inset: 0;
+      opacity: 0.06;
+      background-image:
+        repeating-linear-gradient(45deg, var(--amber-light) 0, var(--amber-light) 1px, transparent 0, transparent 50%);
+      background-size: 28px 28px;
+    }
+
+    .hero-glow {
+      position: absolute;
+      right: -100px; top: -100px;
+      width: 600px; height: 600px;
+      background: radial-gradient(circle, rgba(200,135,42,0.18) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .hero-glow-2 {
+      position: absolute;
+      left: -80px; bottom: -80px;
+      width: 400px; height: 400px;
+      background: radial-gradient(circle, rgba(200,135,42,0.10) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .hero-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 5rem 2rem;
+      position: relative;
+      z-index: 2;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+    }
+
+    .hero-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(200,135,42,0.15);
+      border: 1px solid rgba(200,135,42,0.3);
+      color: var(--amber-light);
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 6px 14px;
+      border-radius: 100px;
+      margin-bottom: 1.5rem;
+    }
+    .hero-eyebrow::before {
+      content: '';
+      width: 6px; height: 6px;
+      background: var(--amber-light);
+      border-radius: 50%;
+    }
+
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.6rem, 5vw, 3.8rem);
+      font-weight: 700;
+      color: var(--cream);
+      line-height: 1.15;
+      margin-bottom: 1.5rem;
+    }
+    .hero h1 em {
+      font-style: italic;
+      color: var(--amber-light);
+    }
+
+    .hero p {
+      font-size: 1.05rem;
+      color: rgba(253,250,244,0.72);
+      max-width: 480px;
+      margin-bottom: 2.5rem;
+      line-height: 1.75;
+    }
+
+    .hero-actions { display: flex; gap: 12px; flex-wrap: wrap; }
+
+    .btn-primary {
+      background: var(--amber);
+      color: var(--white);
+      border: none;
+      padding: 0.85rem 2rem;
+      border-radius: 10px;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 15px;
+      font-weight: 600;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+      transition: background 0.2s, transform 0.15s;
+    }
+    .btn-primary:hover { background: var(--amber-dark); transform: translateY(-1px); }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--cream);
+      border: 1.5px solid rgba(253,250,244,0.3);
+      padding: 0.85rem 2rem;
+      border-radius: 10px;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 15px;
+      font-weight: 500;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+      transition: border-color 0.2s, background 0.2s;
+    }
+    .btn-outline:hover { border-color: rgba(253,250,244,0.7); background: rgba(253,250,244,0.08); }
+
+    .hero-visual {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+    
+
+    .hero-card {
+      background: rgba(253,250,244,0.07);
+      border: 1px solid rgba(253,250,244,0.12);
+      border-radius: 16px;
+      padding: 1.5rem 1.25rem;
+      text-align: center;
+      animation: fadeUp 0.6s ease backwards;
+    }
+    .hero-card:nth-child(1) { animation-delay: 0.1s; }
+    .hero-card:nth-child(2) { animation-delay: 0.2s; }
+    .hero-card:nth-child(3) { animation-delay: 0.3s;  }
+    .hero-card:nth-child(4) { animation-delay: 0.4s; }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .hero-card-icon {
+      width: 48px; height: 48px;
+      background: rgba(200,135,42,0.18);
+      border-radius: 12px;
+      display: flex; align-items: center; justify-content: center;
+      margin: 0 auto 12px;
+      font-size: 22px;
+    }
+    .hero-card h3 {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--cream);
+      margin-bottom: 4px;
+    }
+    .hero-card p {
+      font-size: 12px;
+      color: rgba(253,250,244,0.5);
+      margin: 0;
+    }
+
+    /* ── ABOUT / STATS ── */
+    .stats-bar {
+      background: var(--amber);
+      padding: 2rem;
+    }
+    .stats-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1rem;
+      text-align: center;
+    }
+    .stat-item { padding: 0.5rem; }
+    .stat-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.2rem;
+      font-weight: 700;
+      color: var(--white);
+      line-height: 1;
+    }
+    .stat-label {
+      font-size: 13px;
+      color: rgba(255,255,255,0.78);
+      margin-top: 4px;
+      font-weight: 400;
+    }
+
+    /* ── SECTION SHARED ── */
+    section { padding: 6rem 2rem; }
+
+    .section-inner { max-width: 1200px; margin: 0 auto; }
+
+    .section-tag {
+      display: inline-block;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--amber-dark);
+      background: rgba(200,135,42,0.10);
+      padding: 5px 12px;
+      border-radius: 100px;
+      margin-bottom: 1rem;
+    }
+
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 4vw, 2.8rem);
+      font-weight: 700;
+      color: var(--charcoal);
+      margin-bottom: 1rem;
+      line-height: 1.2;
+    }
+
+    .section-sub {
+      font-size: 1rem;
+      color: var(--muted);
+      max-width: 540px;
+      line-height: 1.7;
+    }
+
+    /* ── ABOUT ── */
+    .about { background: var(--sand-light); }
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      align-items: center;
+    }
+    .about-image-wrap {
+      position: relative;
+    }
+    .about-image-block {
+      background: var(--forest);
+      border-radius: 20px;
+      height: 420px;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .about-image-inner {
+      font-family: 'Playfair Display', serif;
+      font-size: 5rem;
+      /* color: rgba(200,135,42,0.3); */
+      color: var(--amber-light);
+      user-select: none;
+    }
+    .about-badge {
+      position: absolute;
+      bottom: -16px; right: -16px;
+      background: var(--amber);
+      color: var(--white);
+      border-radius: 16px;
+      padding: 1.2rem 1.5rem;
+      box-shadow: var(--shadow-warm);
+    }
+    .about-badge strong { display: block; font-size: 1.8rem; font-family: 'Playfair Display', serif; font-weight: 700; line-height: 1; }
+    .about-badge span { font-size: 13px; opacity: 0.88; }
+
+    .about-content { }
+    .about-content .section-sub { max-width: 100%; margin-bottom: 2rem; }
+
+    .feature-list { list-style: none; display: flex; flex-direction: column; gap: 14px; }
+    .feature-list li {
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+      font-size: 15px;
+      color: var(--charcoal);
+    }
+    .feature-list li::before {
+      content: '';
+      flex-shrink: 0;
+      width: 22px; height: 22px;
+      background: rgba(200,135,42,0.15);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 1px;
+    }
+    .check-icon {
+      flex-shrink: 0;
+      width: 22px; height: 22px;
+      background: rgba(200,135,42,0.15);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      color: var(--amber-dark);
+      font-size: 13px;
+      font-weight: 700;
+      line-height: 1;
+      margin-top: 1px;
+    }
+
+    /* ── SERVICES ── */
+    .services { background: var(--cream); }
+    .services-header {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      margin-bottom: 3rem;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+
+    .service-card {
+      background: var(--white);
+      border: 1px solid var(--sand-dark);
+      border-radius: 18px;
+      padding: 2rem 1.75rem;
+      transition: transform 0.25s, box-shadow 0.25s, border-color 0.25s;
+    }
+    .service-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-warm);
+      border-color: var(--amber-light);
+    }
+
+    .service-icon {
+      width: 52px; height: 52px;
+      border-radius: 14px;
+      background: var(--forest);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 24px;
+      margin-bottom: 1.25rem;
+    }
+
+    .service-card h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: var(--charcoal);
+      margin-bottom: 0.6rem;
+    }
+    .service-card p {
+      font-size: 14px;
+      color: var(--muted);
+      line-height: 1.65;
+    }
+
+    .service-tag {
+      display: inline-block;
+      margin-top: 1.25rem;
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--amber-dark);
+      background: rgba(200,135,42,0.10);
+      padding: 4px 10px;
+      border-radius: 100px;
+    }
+
+    /* ── CTA ── */
+    .cta-section {
+      background: var(--charcoal);
+      padding: 5rem 2rem;
+      text-align: center;
+    }
+    .cta-section h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 4vw, 3rem);
+      color: var(--cream);
+      margin-bottom: 1rem;
+      font-weight: 700;
+    }
+    .cta-section h2 em { font-style: italic; color: var(--amber-light); }
+    .cta-section p {
+      color: rgba(253,250,244,0.65);
+      font-size: 1rem;
+      margin-bottom: 2.5rem;
+    }
+
+    /* ── CONTACT ── */
+    .contact { background: var(--sand-light); }
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: start;
+    }
+
+    .contact-info h2 { margin-bottom: 0.75rem; }
+    .contact-info .section-sub { margin-bottom: 2rem; }
+
+    .contact-detail {
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+      margin-bottom: 1.25rem;
+    }
+    .contact-icon {
+      width: 40px; height: 40px;
+      border-radius: 10px;
+      background: var(--forest);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 18px;
+      flex-shrink: 0;
+    }
+    .contact-detail-text strong {
+      display: block;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      margin-bottom: 2px;
+    }
+    .contact-detail-text span {
+      font-size: 15px;
+      color: var(--charcoal);
+      font-weight: 400;
+    }
+
+    .contact-form { }
+    .form-group { margin-bottom: 1.2rem; }
+    .form-group label {
+      display: block;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--muted);
+      margin-bottom: 6px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .form-group input,
+    .form-group textarea,
+    .form-group select {
+      width: 100%;
+      padding: 0.8rem 1rem;
+      border: 1.5px solid var(--sand-dark);
+      border-radius: 10px;
+      background: var(--white);
+      font-family: 'DM Sans', sans-serif;
+      font-size: 15px;
+      color: var(--charcoal);
+      transition: border-color 0.2s;
+      outline: none;
+    }
+    .form-group input:focus,
+    .form-group textarea:focus {
+      border-color: var(--amber);
+    }
+    .form-group textarea { resize: vertical; min-height: 120px; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--charcoal);
+      padding: 2rem;
+      text-align: center;
+    }
+    .footer-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    footer p { font-size: 13px; color: rgba(253,250,244,0.45); }
+    footer a { color: var(--amber-light); text-decoration: none; }
+    footer a:hover { text-decoration: underline; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 900px) {
+      .hero-inner { grid-template-columns: 1fr; gap: 3rem; }
+      .hero-visual { display: none; }
+      .about-grid { grid-template-columns: 1fr; gap: 3rem; }
+      .about-image-block { height: 280px; }
+      .services-grid { grid-template-columns: 1fr 1fr; }
+      .contact-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+      .stats-inner { grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+    }
+    @media (max-width: 600px) {
+      section { padding: 4rem 1.25rem; }
+      .services-grid { grid-template-columns: 1fr; }
+      .stats-inner { grid-template-columns: 1fr 1fr; }
+      .form-row { grid-template-columns: 1fr; }
+      .nav-links { display: none; }
+      .hero h1 { font-size: 2.2rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <header id="site-header">
+    <nav>
+      <a href="#" class="logo-wrap">
+        <div class="logo-mark">AL .</div>
+        <div class="logo-text">
+          <strong>Al Naseem International</strong>
+          <span>General Trading Co. W.L.L</span>
+        </div>
+      </a>
+      <ul class="nav-links">
+        <li><a href="#" class="active">Home</a></li>
+        <li><a href="#about">About Us</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#contact">Contact Us</a></li>
+        <li><a href="mailto:admin@al-naseemkuwait.com
                         ?subject=Business%20Enquiry
-                        &body=Hello%20Al-nazeem,%0D%0A%0D%0AI%20would%20like%20to%20know%20more%20about%20your%20services.%0D%0A%0D%0ARegards,">Web Mail</a></li>
-                  </ul>
-               </div>
+                        &body=Hello%20Al-nazeem,%0D%0A%0D%0AI%20would%20like%20to%20know%20more%20about%20your%20services.%0D%0A%0D%0ARegards," class="nav-cta">Send an Enquiry</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero" id="home">
+    <div class="hero-pattern"></div>
+    <div class="hero-glow"></div>
+    <div class="hero-glow-2"></div>
+    <div class="hero-inner">
+      <div class="hero-text">
+        <div class="hero-eyebrow">Trusted Trading Partner</div>
+        <h1>Quality Supplies,<br><em>Delivered with</em><br>Integrity</h1>
+        <p>Al Naseem International provides offices, schools, and businesses across the region with reliable supplies, computer accessories, and professional services — since 2005.</p>
+        <div class="hero-actions">
+          <a href="#services" class="btn-primary">Explore Our Services</a>
+          <a href="#contact" class="btn-outline">Contact Us</a>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="hero-card">
+          <div class="hero-card-icon">📦</div>
+          <h3>Office Stationery</h3>
+          <p>Full catalogue of office & school supplies</p>
+        </div>
+        <div class="hero-card">
+          <div class="hero-card-icon">💻</div>
+          <h3>Computer Accessories</h3>
+          <p>USB, cables, memory, peripherals</p>
+        </div>
+        <div class="hero-card">
+          <div class="hero-card-icon">🛡️</div>
+          <h3>Software Licensing</h3>
+          <p>OS, MS Office, antivirus solutions</p>
+        </div>
+        <div class="hero-card">
+          <div class="hero-card-icon">🤝</div>
+          <h3>Bulk Procurement</h3>
+          <p>Corporate & institutional sourcing</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS BAR -->
+  <div class="stats-bar">
+    <div class="stats-inner">
+      <div class="stat-item">
+        <div class="stat-num">20+</div>
+        <div class="stat-label">Years of Experience</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">500+</div>
+        <div class="stat-label">Happy Clients</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">1000+</div>
+        <div class="stat-label">Products Available</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">100%</div>
+        <div class="stat-label">Reliable Delivery</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ABOUT -->
+  <section class="about" id="about">
+    <div class="section-inner">
+      <div class="about-grid">
+        <div class="about-image-wrap">
+          <div class="about-image-block">
+            <div class="about-image-inner">AL.</div>
+          </div>
+          <div class="about-badge">
+            <strong>W.L.L</strong>
+            <span>Licensed &amp; Registered</span>
+          </div>
+        </div>
+        <div class="about-content">
+          <span class="section-tag">About Us</span>
+          <h2 class="section-title">Your Dependable Supply Partner in the Region</h2>
+          <p class="section-sub" style="margin-bottom:1.5rem;">
+            Al Naseem International General Trading Co. W.L.L has been a trusted name in commercial supply for over two decades. We serve corporate clients, government bodies, schools, and small businesses with equal dedication.
+          </p>
+          <ul class="feature-list">
+            <li>
+              <span class="check-icon">✓</span>
+              Comprehensive range of office and school stationery
+            </li>
+            <li>
+              <span class="check-icon">✓</span>
+              Computer accessories from leading global brands
+            </li>
+            <li>
+              <span class="check-icon">✓</span>
+              Licensed software solutions for businesses of all sizes
+            </li>
+            <li>
+              <span class="check-icon">✓</span>
+              Fast, reliable procurement and delivery
+            </li>
+            <li>
+              <span class="check-icon">✓</span>
+              Dedicated account managers for corporate clients
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section class="services" id="services">
+    <div class="section-inner">
+      <div class="services-header">
+        <div>
+          <span class="section-tag">What We Offer</span>
+          <h2 class="section-title" style="margin-bottom:0;">Our Core Services</h2>
+        </div>
+        <p style="font-size:14px; color:var(--muted); max-width:320px; line-height:1.6;">
+          From everyday stationery to complete IT procurement — we keep your operations running smoothly.
+        </p>
+      </div>
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="service-icon">📝</div>
+          <h3>Office &amp; School Stationery</h3>
+          <p>Pens, paper, folders, notebooks, envelopes, labels — a complete range for every workspace and classroom.</p>
+          <span class="service-tag">Most Popular</span>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">🖥️</div>
+          <h3>Computer Accessories</h3>
+          <p>Flash drives, memory cards, USB hubs, headsets, cables, laptop bags, batteries, and more.</p>
+          <span class="service-tag">Tech Supply</span>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">💿</div>
+          <h3>Software Licensing</h3>
+          <p>Genuine operating systems, Microsoft Office suites, and top-rated antivirus solutions for business use.</p>
+          <span class="service-tag">IT Solutions</span>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">🖨️</div>
+          <h3>Printing &amp; Toner</h3>
+          <p>Ink cartridges, toner, printing paper, and supplies compatible with all major printer brands.</p>
+          <span class="service-tag">Consumables</span>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">📋</div>
+          <h3>Bulk Procurement</h3>
+          <p>Custom sourcing for corporate and institutional buyers — competitive pricing with volume discounts.</p>
+          <span class="service-tag">Corporate</span>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">🚚</div>
+          <h3>Reliable Delivery</h3>
+          <p>Prompt order fulfilment and delivery across the region — tracking and account management included.</p>
+          <span class="service-tag">Logistics</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA BANNER -->
+  <div class="cta-section">
+    <div class="section-inner">
+      <h2>Ready to Place an <em>Order?</em></h2>
+      <p>Reach out to our team for a custom quote or product inquiry — we respond within 24 hours.</p>
+      <a href="#contact" class="btn-primary">Contact Us Today</a>
+    </div>
+  </div>
+
+  <!-- CONTACT -->
+  <section class="contact" id="contact">
+    <div class="section-inner">
+      <div class="contact-grid">
+        <div class="contact-info">
+          <span class="section-tag">Get in Touch</span>
+          <h2 class="section-title">We'd Love to Hear From You</h2>
+          <p class="section-sub">Whether it's a large order, a product question, or just an inquiry,<br> Our friendly team is here to help.</p>
+
+          <div class="contact-detail">
+            <div class="contact-icon">📍</div>
+            <div class="contact-detail-text">
+              <strong>Address</strong>
+              <span>Al Naseem International General Trading Co.<br> Postal Code 32016<br> Block–135, Qutaiba Street , Bldg–27, Bldg Anez, Floor–2nd, Room–1, Nugra<br>Hawalli–Kuwait</span>
             </div>
-         </nav>
-      </header>  
-      <section>
-         <!-- CAROUSEL --> 
-         <div id="carousel">
-            <div id="owl-demo" class="owl-carousel owl-theme"> 
-               <div class="item">
-                  <img src="img/carousel/stationary.png" alt="We supply all Kinds of Office & School Stationary">
-                  <div class="line"> 
-                     <div class="text hide-s">
-                        <div class="line"> 
-                          <div class="prev-arrow hide-s hide-m">
-                             <i class="icon-chevron_left"></i>
-                          </div>
-                          <div class="next-arrow hide-s hide-m">
-                             <i class="icon-chevron_right"></i>
-                          </div>
-                        </div> 
-                        <h2>Supply Office & School Stationary</h2>
-                        <p>We provice all kinds of school and office stationary</p>
-                     </div>
-                  </div>
-               </div>
-               <div class="item">
-                  <img src="img/carousel/Computer accessories.png" alt="Computer accessories">
-                  <div class="line">
-                     <div class="text hide-s"> 
-                        <div class="line"> 
-                          <div class="prev-arrow hide-s hide-m">
-                             <i class="icon-chevron_left"></i>
-                          </div>
-                          <div class="next-arrow hide-s hide-m">
-                             <i class="icon-chevron_right"></i>
-                          </div>
-                        </div> 
-                        <h2>Computer accessories</h2>
-                        <p>Flash memory cards,USB drives, headsets, Cables, Laptop bags, batteries.</p>
-                     </div>
-                  </div>
-               </div>
-               <div class="item">
-                  <img src="img/carousel/Computer software.png" alt="We Provide Computer software">
-                  <div class="line">
-                     <div class="text hide-s">
-                        <div class="line"> 
-                          <div class="prev-arrow hide-s hide-m">
-                             <i class="icon-chevron_left"></i>
-                          </div>
-                          <div class="next-arrow hide-s hide-m">
-                             <i class="icon-chevron_right"></i>
-                          </div>
-                        </div> 
-                        <h2>We Provide Computer software</h2>
-                        <p>Operating System, MS Office, Anti-virus.</p>
-                     </div>
-                  </div>
-               </div>
+          </div>
+          <div class="contact-detail">
+            <div class="contact-icon">📧</div>
+            <div class="contact-detail-text">
+              <strong>Email</strong>
+              <span><a href="mailto:admin@al-naseemkuwait.com" style="color:var(--amber-dark); text-decoration:none;">admin@al-naseemkuwait.com</a></span><br>
+              <span><a href="mailto:sales@al-naseemkuwait.com" style="color:var(--amber-dark); text-decoration:none;">sales@al-naseemkuwait.com</a></span><br>
+              <span><a href="mailto:shylesh@al-naseemkuwait.com" style="color:var(--amber-dark); text-decoration:none;">shylesh@al-naseemkuwait.com</a></span>
             </div>
-         </div>
+            
+          </div>
+          <div class="contact-detail">
+            <div class="contact-icon">📞</div>
+            <div class="contact-detail-text">
+              <strong>Phone</strong>
+              <span>+965 2261 0474</span>
+            </div>
+          </div>
+          <div class="contact-detail">
+            <div class="contact-icon">📠</div>
+            <div class="contact-detail-text">
+              <strong>Fax</strong>
+              <span>+965 2261 0474</span>
+            </div>
+          </div>
+        </div>
+        <div class="contact-form">
+          <div class="form-row">
+            <div class="form-group">
+              <label>First Name</label>
+              <input type="text" placeholder="John" required>
+            </div>
+            <div class="form-group">
+              <label>Last Name</label>
+              <input type="text" placeholder="Smith" required>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Email Address</label>
+            <input type="email" placeholder="john@company.com" required>
+          </div>
+          <div class="form-group">
+            <label>Subject</label>
+            <input type="text" placeholder="Product inquiry / Bulk order ..." required>
+          </div>
+          <div class="form-group">
+            <label>Message</label>
+            <textarea placeholder="Tell us what you need and we'll get back to you promptly." required></textarea>
+          </div>
+          <button  class="btn-primary" style="width:100%; "onclick="sendToWhatsApp()" >Send Message</button>
+        </div>
+      </div>
+    </div>
+  </section>
 
-      </section>
-</div>      
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <p>© 2024 Al Naseem International General Trading Co. W.L.L — All rights reserved.</p>
+      <p>Re-Designed with care by <a href="mailto:sujaysubhashofficial@gmail.com">Sujay Subhash</a></p>
+    </div>
+  </footer>
 
-      <!-- FOOTER -->
-      
-      <footer class="site-footer">
-          <footer>
-             <div class="line">
-                <div class="s-12 l-5">
-                   <p>Copyright 2016, Al Naseem International Gene. Trading Co. W.L.L</p>
-                </div>
-                <div class="s-12 l-6">
-                   <p>Designed & Developed by <a href="www.zaksoftwaretech.com" target="_blank">Zak Software Technologies</a></p>
-                </div>            
-             </div>
-          </footer>
-      </footer>
-      <script type="text/javascript" src="owl-carousel/owl.carousel.js"></script>
-      <script type="text/javascript">
-         jQuery(document).ready(function($) {
-            var theme_slider = $("#owl-demo");
-            $("#owl-demo").owlCarousel({
-                navigation: false,
-                slideSpeed: 300,
-                paginationSpeed: 400,
-                autoPlay: 6000,
-                addClassActive: true,
-             // transitionStyle: "fade",
-                singleItem: true
-            });
-            $("#owl-demo2").owlCarousel({
-                slideSpeed: 300,
-                autoPlay: true,
-                navigation: true,
-                navigationText: ["&#xf007","&#xf006"],
-                pagination: false,
-                singleItem: true
-            });
-        
-            // Custom Navigation Events
-            $(".next-arrow").click(function() {
-                theme_slider.trigger('owl.next');
-            })
-            $(".prev-arrow").click(function() {
-                theme_slider.trigger('owl.prev');
-            })     
-        }); 
-      </script>
-   </body>
+  <script>
+    const header = document.getElementById('site-header');
+    window.addEventListener('scroll', () => {
+      header.classList.toggle('scrolled', window.scrollY > 20);
+    });
 
+    function sendToWhatsApp() {
+        const firstName = document.querySelector('input[placeholder="John"]').value;
+        const lastName = document.querySelector('input[placeholder="Smith"]').value;
+        const email = document.querySelector('input[type="email"]').value;
+        const subject = document.querySelector('input[placeholder*="Product"]').value;
+        const message = document.querySelector('textarea').value;
+
+        const phoneNumber = "9747037263"; 
+
+        const text = `Hello, I am ${firstName} ${lastName}
+        Email: ${email}
+        Subject: ${subject}
+        Message: ${message}`;
+
+        const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(text)}`;
+
+        window.open(url, "_blank");
+      }
+
+  </script>
+</body>
 </html>
-
